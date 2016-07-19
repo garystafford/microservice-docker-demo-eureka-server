@@ -32,5 +32,10 @@ Build the Docker Image containing service jar. The profile will be used to run
 ./gradlew clean build buildDocker
 ```
 
+#### Links
+http://localhost:8761
+http://localhost:8761/eureka/apps
+
 #### References
 * https://github.com/Transmode/gradle-docker
+* https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka
