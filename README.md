@@ -1,5 +1,4 @@
-![https://travis-ci.org/garystafford/microservice-docker-demo-widget.svg?branch=master](https://travis-ci.org/garystafford/microservice-docker-demo-widget.svg?branch=master)
-
+![https://travis-ci.org/garystafford/microservice-docker-demo-eureka-server.svg?branch=master](https://travis-ci.org/garystafford/microservice-docker-demo-eureka-server.svg?branch=master)
 
 # microservice-docker-demo-config
 
