@@ -17,6 +17,9 @@ Spring Cloud Netflix Eureka Server, for an upcoming post on scaling microservice
 * Spring Cloud Config Server (migrating to Consul)
 * Spring Cloud Netflix Eureka
 * Spring Boot with Docker
+* The Elastic Stack (Elasticsearch, Kibana, Logstash, and Beats)
+* DockerHub
+* Travis CI
 
 #### Build Service
 Build and start service locally
@@ -26,22 +29,28 @@ Build and start service locally
   build/libs/eureka-server-0.1.0.jar
 ```
 
-#### Docker
-Login to Docker Hub first
+#### Building Images with Spring Boot
+Change the `group` key in `build.gradle` to you DockerHub repository name, such as
+```text
+group = '<your_dockerhub_repo_name>'
+```
+
+Login to your Docker Hub account from command line
 ```bash
 docker login
 ```
 
-Build the Docker Image containing service jar. The profile will be used to run
- Docker container not create Docker Image
+Build the Docker Image containing service jar
 ```bash
 ./gradlew clean build buildDocker
 ```
+If `push = true` was set in the `buildDocker` method of the `build.gradle`, the images
+is automatically pushed to your DockerHub account.
 
-If you chose to set `push = false` within the `buildDocker` method,
-then use the following command to push the image to DockerHub
+If you chose to set `push = false` within the `buildDocker` method of the `build.gradle`,
+then use the following type of command to push the new Docker Image to DockerHub, after it is built.
 ```bash
-docker push garystafford/eureka-server:latest
+docker push <your_dockerhub_repo_name>/user-service:latest
 ```
 
 #### Links
